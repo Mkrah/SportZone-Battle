@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SportsZone Battle</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Titillium+Web:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <h1>🏆 SportsZone Battle 🏆</h1>
+    <p class="tagline">Challenge. Control. Conquer. 🥇</p>
+    <img src="https://media.tenor.com/YOYU2VNXGZkAAAAi/dribble-nba.gif" alt="sports gif" style="width:150px; margin-top:1rem;">
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#rules">Rules</a></li>
+      <li><a href="#game-pieces">Game Pieces</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section id="about">
+      <h2>🎮 About the Game</h2>
+      <p><strong>SportsZone Battle</strong> is a high-energy board game that blends physical mini-games 🏈🏀🏐🥎, trivia, and strategy. Compete to conquer zones, earn points, and outplay your friends using real mini-games and fast-paced action. Perfect for parties, game nights, and sports fans of all ages!</p>
+      <img src="https://media1.tenor.com/m/2aLKo-0feC0AAAAd/balls-sports.gif" alt="balls" style="width:100%; max-width:400px; margin-top:1rem; border-radius:12px;">
+    </section>
+
+    <section id="rules">
+      <h2>📋 How to Play</h2>
+      <ol>
+        <li>🎲 Place the board in the center and choose your player tokens.</li>
+        <li>🃏 Shuffle Sport Cards & place Challenge Decks near each zone.</li>
+        <li>🏐 Place a Mini-Ball Token in the center of each zone.</li>
+        <li>🧮 Set up the Scoreboard and grab the dice.</li>
+        <li><strong>On Your Turn:</strong>
+          <ul>
+            <li>🎲 Roll both dice and move clockwise.</li>
+            <li>🏃‍♂️ Enter the sport zone you land on.</li>
+            <li>📤 Draw a Sport Card — it might start a mini-game, challenge, or special move!</li>
+            <li>⭐ Earn points for success!</li>
+          </ul>
+        </li>
+        <li><strong>Zone Control:</strong> Hold a zone for 2 full turns 🏅 = +10 points!</li>
+        <li><strong>Mini-Games & Challenges:</strong>
+          <ul>
+            <li>Mini-games: 🏹 Flick, toss, bounce!</li>
+            <li>Challenges: 🤔 Trivia, 💃 Movement puzzles, ⚔️ 1v1 matchups.</li>
+            <li>Win mini-game = 3 pts 🥉 | Win challenge = 2 pts 🥈</li>
+          </ul>
+        </li>
+        <li><strong>Special Cards:</strong> 🎁 Bonus moves, steal points, trigger chaos!</li>
+        <li><strong>Winning:</strong> 🎉 Game ends after 8 rounds or 3 zones captured. Highest score wins!</li>
+      </ol>
+      <img src="https://media1.tenor.com/m/akLtEJPULVIAAAAC/flip-monopoly.gif" alt="scoreboard gif" style="width:100%; max-width:400px; margin-top:1rem; border-radius:12px;">
+    </section>
+
+    <section id="game-pieces">
+      <h2>🧩 Game Pieces</h2>
+      <ul>
+        <li><strong>📍 Game Board:</strong> 4 zones: 🏈 🥎 🏀 🏐</li>
+        <li><strong>🎯 Player Tokens:</strong> Represent where players are on the board.</li>
+        <li><strong>🏐 Mini-Ball Tokens:</strong> Used in fun mini-games!</li>
+        <li><strong>🃏 Sport Cards:</strong> Drive the action each turn.</li>
+        <li><strong>📑 Challenge Decks:</strong> Mini-game instructions, trivia, and more.</li>
+        <li><strong>📊 Scoreboard:</strong> Track the score ➡️ <span id="score">Player 1: 0 | Player 2: 0</span></li>
+        <li><strong>🎲 Dice (6 & 8-sided):</strong> Decide your movement.</li>
+        <li><strong>⏱️ Timer:</strong> 30–60 second countdowns for mini-games.</li>
+        <li><strong>💠 Tokens:</strong> Represent earned points.</li>
+        <li><strong>🏀 Mini Game Props:</strong> Hoop, launcher, cups, targets.</li>
+      </ul>
+      <img src="https://media1.tenor.com/m/RHe_5L1_M2YAAAAd/fun.gif" alt="mini game gif" style="width:100%; max-width:400px; margin-top:1rem; border-radius:12px;">
+    </section>
+  </main>
+
+  <footer>
+    <p>🏆 Created with heart by the SportsZone Team • All rights reserved 🛡️</p>
+  </footer>
+
+  <script>
+    // Smooth scroll for nav links
+    document.querySelectorAll('nav a').forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+
+    // Demo interactive scoreboard logic
+    const scoreDisplay = document.getElementById("score");
+    let p1Score = 0;
+    let p2Score = 0;
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "1") p1Score += 1;
+      if (e.key === "2") p2Score += 1;
+      scoreDisplay.textContent = `Player 1: ${p1Score} | Player 2: ${p2Score}`;
+    });
+  </script>
+</body>
+</html>
